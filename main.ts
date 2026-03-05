@@ -5,19 +5,19 @@
  * This program Will show a check mark.
 */
 
-// setup
-basic.clearScreen()
+// Setup: Ensure LED is off at start
 pins.digitalWritePin(DigitalPin.P16, 0)
 basic.showIcon(IconNames.Happy)
 
-// turn on LED
+// Requirement: Button A powers ON the LED
 input.onButtonPressed(Button.A, function () {
     basic.showIcon(IconNames.Yes)
-    pins.digitalWritePin(DigitalPin.P16, 1)
+    pins.digitalWritePin(DigitalPin.P16, 1) // Sets Pin 16 to 3.0V
 })
 
-// turn off LED
+// Requirement: Button B powers OFF the LED
 input.onButtonPressed(Button.B, function () {
     basic.showIcon(IconNames.No)
-    pins.digitalWritePin(DigitalPin.P16, 0)
+    pins.digitalWritePin(DigitalPin.P16, 0) // Sets Pin 16 to 0.0V
 })
+
